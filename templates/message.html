@@ -1,0 +1,25 @@
+   <!-- Begin alerts1 -->  
+                  
+   {% with messages = get_flashed_messages(with_categories=true) %}
+   {% if messages %}
+   {% for category, message in messages %}
+   <script class="msg">
+      
+   Swal.fire({
+
+
+          text: "{{ message }}",
+          // Custom message flashed from your flask routes
+          customClass: {
+         popup: 'custom-alert-height' // Custom class for alert
+      }
+
+
+   })
+
+   </script>
+   {% endfor %}
+   {% endif %}
+   {% endwith %}
+
+   <!-- End alerts -->
